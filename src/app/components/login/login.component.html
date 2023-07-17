@@ -1,6 +1,0 @@
-<form ngNativeValidate (ngSubmit)="formSubmitted()">
-    <input type="text" placeholder="Username" [(ngModel)]="form.username" [ngModelOptions]="{standalone: true}" required>
-    {{form.username | uppercase}}
-    <input type="password" placeholder="Password" [(ngModel)]="form.password" [ngModelOptions]="{standalone: true}" required>
-    <button type="submit">Submit</button>
-</form>
