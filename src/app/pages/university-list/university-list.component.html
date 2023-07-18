@@ -11,11 +11,11 @@
                 </tr>
             </thead>
             <tbody *ngIf="universities!=null && isLoading == false">
-                <tr class="{{(i+1)%2==0 ? 'bg-success text-white' : 'bg-warning'}}" *ngFor="let item of universities; let i = index">
+                <tr class="{{(i+1)%2==0 ? 'bg-success text-white' : 'bg-warning'}}" *ngFor="let item of universities; let i = index">   
                     <td>{{item.name}}</td>
                     <td>{{item["state-province"] || '-'}}</td>
                     <td>
-                        <a href="{{item.domains.length > 0 ? 'http://' + item.domains[0] : '' }}" class="{{(i+1)%2==0 ? 'text-white' : 'text-dark'}}" target="_blank">{{item.domains.length > 0 ? item.domains[0] : '' }}</a>
+                        <a href="{{item.domains.length > 0 ? 'http://' + item.domains[0] : ''}}" class="{{(i+1)%2==0 ? 'text-white' : 'text-dark'}}" target="_blank">{{item.domains.length > 0 ? item.domains[0] : '' }}</a>
                     </td>
                 </tr>
             </tbody>
