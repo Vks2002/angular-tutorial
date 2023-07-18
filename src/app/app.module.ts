@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'; 
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,7 @@ import { PageNotFoundComponent } from './components/error_pages/page-not-found/p
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UniversityListComponent } from './pages/university-list/university-list.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { ProfileComponent } from './pages/profile/profile.component';
     PageNotFoundComponent,
     HomeLayoutComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    UniversityListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

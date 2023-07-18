@@ -1,0 +1,33 @@
+<div class="row mt-5">
+    <div class="col-md-8 offset-md-2">
+        <input type="text" class="form-control mb-3" [(ngModel)]="countryName" (keyup.enter)="getUniversities()"
+            placeholder="Enter Country Name">
+        <table class="table table-bordered table-hover">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="universities!=null && isLoading == false">
+                <tr class="{{(i+1)%2==0 ? 'bg-success text-white' : 'bg-warning'}}" *ngFor="let item of universities; let i = index">
+                    <td>{{item.name}}</td>
+                    <td>{{item["state-province"] || '-'}}</td>
+                    <td>
+                        <a href="{{item.domains.length > 0 ? 'http://' + item.domains[0] : '' }}" class="{{(i+1)%2==0 ? 'text-white' : 'text-dark'}}" target="_blank">{{item.domains.length > 0 ? item.domains[0] : '' }}</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td colspan="3" class="text-center" *ngIf="isLoading">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

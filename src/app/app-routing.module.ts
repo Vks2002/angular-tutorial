@@ -7,9 +7,10 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UniversityListComponent } from './pages/university-list/university-list.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: "full", redirectTo: 'tools/task-creator'},
+  { path: '', pathMatch: "full", redirectTo: 'dashboard'},
   { 
     title: "Login",
     path: 'login', 
@@ -19,6 +20,11 @@ const routes: Routes = [
     title: "Signup",
     path: 'signup', 
     component: SignupComponent 
+  },
+  { 
+    title: "Universities",
+    path: 'universities', 
+    component: UniversityListComponent 
   },
   {
     path: '',
